@@ -1,0 +1,24 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "My Random Tutorials"
+  author: "Rami Krispin"
+  date: "11/27/2022"
+  chapters:
+    - index.qmd
+    - js.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+
