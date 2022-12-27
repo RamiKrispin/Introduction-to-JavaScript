@@ -11,7 +11,13 @@ This tutorial covers the basic functionality operations of the JavaScript (JS) l
 * Data structure
 
 ## Prerequisites 
-This tutorial provides an introduction to JS, and no previous knowledge of JS is required. We will use some basic HTML and CSS throughout the tutorial, don't worry if you are unfamiliar with those languages. 
+
+Here are the assumptions I made when I created this tutorial:
+
+* No previous knowledge of JS
+* Have basic knowledge of another programming language (e.g., Python, R, Julia, etc.), and an understanding of the use of variables assignment and functions
+
+In addition, we will use some basic HTML and CSS throughout the tutorial, don’t worry if you are unfamiliar with those languages.
 
 ## Settings
 
@@ -19,7 +25,10 @@ Before getting started, let's set the development environment. There are many wa
 
 ### VScode Settings for JavaScripts
 
-If you don't have VScode installed, you can download and install it directly from the [VScode website](https://code.visualstudio.com/). I also using the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension, which enables you to launch a local development server with a live reload feature for static & dynamic pages. 
+If you don't have VScode installed, you can download and install it directly from the [VScode website](https://code.visualstudio.com/). I also use the following extensions:
+
+* [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension, which enables you to launch a local development server with a live reload feature for static & dynamic pages
+* [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension, supporting development on VScode with Docker containers
 
 ### Setting Docker Environment
 
