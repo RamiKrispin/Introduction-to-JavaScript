@@ -122,14 +122,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#settings" id="toc-settings" class="nav-link active" data-scroll-target="#settings"><span class="toc-section-number">1.1</span>  Settings</a>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites"><span class="toc-section-number">1.1</span>  Prerequisites</a></li>
+  <li><a href="#settings" id="toc-settings" class="nav-link" data-scroll-target="#settings"><span class="toc-section-number">1.2</span>  Settings</a>
   <ul class="collapse">
-  <li><a href="#vscode-settings-for-javascripts" id="toc-vscode-settings-for-javascripts" class="nav-link" data-scroll-target="#vscode-settings-for-javascripts"><span class="toc-section-number">1.1.1</span>  VScode Settings for JavaScripts</a></li>
-  <li><a href="#docker" id="toc-docker" class="nav-link" data-scroll-target="#docker"><span class="toc-section-number">1.1.2</span>  Docker</a></li>
+  <li><a href="#vscode-settings-for-javascripts" id="toc-vscode-settings-for-javascripts" class="nav-link" data-scroll-target="#vscode-settings-for-javascripts"><span class="toc-section-number">1.2.1</span>  VScode Settings for JavaScripts</a></li>
+  <li><a href="#setting-docker-environment" id="toc-setting-docker-environment" class="nav-link" data-scroll-target="#setting-docker-environment"><span class="toc-section-number">1.2.2</span>  Setting Docker Environment</a></li>
   </ul></li>
-  <li><a href="#getting-started-with-javascript" id="toc-getting-started-with-javascript" class="nav-link" data-scroll-target="#getting-started-with-javascript"><span class="toc-section-number">1.2</span>  Getting started with JavaScript</a>
+  <li><a href="#getting-started-with-javascript" id="toc-getting-started-with-javascript" class="nav-link" data-scroll-target="#getting-started-with-javascript"><span class="toc-section-number">1.3</span>  Getting started with JavaScript</a>
   <ul class="collapse">
-  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow"><span class="toc-section-number">1.2.1</span>  Workflow</a></li>
+  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow"><span class="toc-section-number">1.3.1</span>  Workflow</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -155,15 +156,27 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>WIP…pre spelling check</p>
-<section id="settings" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="settings"><span class="header-section-number">1.1</span> Settings</h2>
+<p>This tutorial covers the basic functionality operations of the JavaScript (JS) language, covering the following topics:</p>
+<ul>
+<li>Setting VScode environment</li>
+<li>Basic workflow</li>
+<li>Variables</li>
+<li>Functions</li>
+<li>Data structure</li>
+</ul>
+<section id="prerequisites" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="prerequisites"><span class="header-section-number">1.1</span> Prerequisites</h2>
+<p>This tutorial provides an introduction to JS, and no previous knowledge of JS is required. We will use some basic HTML and CSS throughout the tutorial, don’t worry if you are unfamiliar with those languages.</p>
+</section>
+<section id="settings" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="settings"><span class="header-section-number">1.2</span> Settings</h2>
 <p>Before getting started, let’s set the development environment. There are many ways to develop and execute JavaScript. For this tutorial, I use VScode, which has great integrations with JavaScript, HTML, and CSS and seamless integration with Docker. In addition, it has great integration with Quarto, which was used to create this document. If you want to follow the same settings, check the instructions below.</p>
-<section id="vscode-settings-for-javascripts" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="vscode-settings-for-javascripts"><span class="header-section-number">1.1.1</span> VScode Settings for JavaScripts</h3>
+<section id="vscode-settings-for-javascripts" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="vscode-settings-for-javascripts"><span class="header-section-number">1.2.1</span> VScode Settings for JavaScripts</h3>
 <p>If you don’t have VScode installed, you can download and install it directly from the <a href="https://code.visualstudio.com/">VScode website</a>. I also using the <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a> extension, which enables you to launch a local development server with a live reload feature for static &amp; dynamic pages.</p>
 </section>
-<section id="docker" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="docker"><span class="header-section-number">1.1.2</span> Docker</h3>
+<section id="setting-docker-environment" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="setting-docker-environment"><span class="header-section-number">1.2.2</span> Setting Docker Environment</h3>
 <p>One of the main reasons I love using VScode is the seamless integration with Docker. It enables you to develop in your local folder while executing the code inside the image. Here is what you need to set your VScode to run inside a Docker image:</p>
 <ul>
 <li>Docker Desktop (or equivalent) install on your machine (download and install it from <a href="https://www.docker.com/products/docker-desktop/">here</a>)</li>
@@ -172,19 +185,23 @@ ul.task-list li input[type="checkbox"] {
 <li>Create the devcontainer.json file with your container settings (image name, environment variables, extension names, etc.), <a href="https://github.com/RamiKrispin/Tutorials/blob/main/.devcontainer/devcontainer.json">here</a> is my <code>devcontainer.json</code> file setting</li>
 <li>Open the folder inside the container (see the screenshot below)</li>
 </ul>
-<video controls="controls" width="800" height="600" name="Video Name">
-<source src="./images/vscode_open_container.mov">
-</video>
-<p><img src="./images/vscode open container.gif" alt="Open Container" width="100%"></p>
+<p><img src="./images/vscode_container.gif" alt="Open Container" width="100%"></p>
+<p>You can read more about setting and using Docker with VScode on <a href="https://code.visualstudio.com/docs/containers/overview">VScode’s documentation</a>.</p>
+<p>If you want to leverage the tutorial Docker settings, you can clone the repository and follow the next steps:</p>
+<ul>
+<li>Open the tutorial repository’s folder on VScode</li>
+<li>Open the <code>Command Palette</code> (⇧⌘P in Mac, Ctrl+Shift+P in Windows) or use the <code>Open Remote Window</code> button (on the bottom left side, see the screen recording above) and type <code>Open Folder in Container</code>.</li>
+</ul>
+<p><strong>Note:</strong> It might take few minutes on the first time opening the container, as it pull the docker image from <a href="https://hub.docker.com/repository/docker/rkrispin/tutorial">Docker Hub</a>.</p>
 </section>
 </section>
-<section id="getting-started-with-javascript" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="getting-started-with-javascript"><span class="header-section-number">1.2</span> Getting started with JavaScript</h2>
+<section id="getting-started-with-javascript" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="getting-started-with-javascript"><span class="header-section-number">1.3</span> Getting started with JavaScript</h2>
 <p>JavaScript (also known as JS), is one of the most popular programming lannguage for web development. It typically used to create web pages applications, mobile apps, games, and great data visualizations tools. You can run JavaScript on your web-browser (e.g., Chrome, Safari, Firefox, etc.):</p>
 <p><strong>Screen record here</strong>*</p>
 <p>While you can use your web-browser as consul for ad-hoc code test, the development of JS applications done inside a script using code editor such VScode, notepade, etc. It is common to have JS code embaded inside HTML script (or calling JS script from HTML script).</p>
-<section id="workflow" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="workflow"><span class="header-section-number">1.2.1</span> Workflow</h3>
+<section id="workflow" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="workflow"><span class="header-section-number">1.3.1</span> Workflow</h3>
 <p>In this tutorial, we will use the following three files to excute JS code on the browser: * <code>index.js</code> - the main JS file we * <code>index.html</code> * <code>style.css</code></p>
 <pre class="shell"><code>.
 ├── index.html

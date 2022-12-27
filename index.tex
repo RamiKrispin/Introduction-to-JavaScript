@@ -213,7 +213,7 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, enhanced, sharp corners, breakable, borderline west={3pt}{0pt}{shadecolor}, frame hidden, boxrule=0pt]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, interior hidden, boxrule=0pt, breakable, enhanced, sharp corners, frame hidden]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -236,36 +236,105 @@
 
 WIP\ldots pre spelling check
 
+This tutorial covers the basic functionality operations of the
+JavaScript (JS) language, covering the following topics:
+
+\begin{itemize}
+\tightlist
+\item
+  Setting VScode environment
+\item
+  Basic workflow
+\item
+  Variables
+\item
+  Functions
+\item
+  Data structure
+\end{itemize}
+
+\hypertarget{prerequisites}{%
+\section{Prerequisites}\label{prerequisites}}
+
+This tutorial provides an introduction to JS, and no previous knowledge
+of JS is required. We will use some basic HTML and CSS throughout the
+tutorial, don't worry if you are unfamiliar with those languages.
+
 \hypertarget{settings}{%
 \section{Settings}\label{settings}}
 
-Before getting started, let's set the development enviroment. There are
-many ways to develope and excute JavaScript, for this tutorial, I am
-using VScode. VScode has great integrations with JavaScript, HTML, and
-CSS, and seamless integration with Docker. In addition, it has great
-integration of Quarto, which used to create this document. If you want
-to follow the same settings, check the instractions below.
+Before getting started, let's set the development environment. There are
+many ways to develop and execute JavaScript. For this tutorial, I use
+VScode, which has great integrations with JavaScript, HTML, and CSS and
+seamless integration with Docker. In addition, it has great integration
+with Quarto, which was used to create this document. If you want to
+follow the same settings, check the instructions below.
 
 \hypertarget{vscode-settings-for-javascripts}{%
 \subsection{VScode Settings for
 JavaScripts}\label{vscode-settings-for-javascripts}}
 
-If you don't have VScode install, you can download and install it
-directly from \href{https://code.visualstudio.com/}{VScode website}. I
-also using
+If you don't have VScode installed, you can download and install it
+directly from the \href{https://code.visualstudio.com/}{VScode website}.
+I also using the
 \href{https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer}{Live
-Server} extention, which enables you to launch a local development
-server with live reload feature for static \& dynamic pages.
+Server} extension, which enables you to launch a local development
+server with a live reload feature for static \& dynamic pages.
 
-\hypertarget{docker}{%
-\subsection{Docker}\label{docker}}
+\hypertarget{setting-docker-environment}{%
+\subsection{Setting Docker
+Environment}\label{setting-docker-environment}}
 
-\textbf{TODO} Setting docker with VScode
+One of the main reasons I love using VScode is the seamless integration
+with Docker. It enables you to develop in your local folder while
+executing the code inside the image. Here is what you need to set your
+VScode to run inside a Docker image:
 
-The main reason I love using VScode is the seamless integression with
-Docker, enabling you develop in your local folder while running the code
-inside image. If you want to use the same environment here are two
-simple ways:
+\begin{itemize}
+\tightlist
+\item
+  Docker Desktop (or equivalent) install on your machine (download and
+  install it from
+  \href{https://www.docker.com/products/docker-desktop/}{here})
+\item
+  Docker
+  \href{https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker}{extension}
+  for VScode
+\item
+  Set the supporting image,
+  \href{https://github.com/RamiKrispin/Tutorials/tree/main/docker}{here}
+  are the Docker settings I am using for this tutorial
+\item
+  Create the devcontainer.json file with your container settings (image
+  name, environment variables, extension names, etc.),
+  \href{https://github.com/RamiKrispin/Tutorials/blob/main/.devcontainer/devcontainer.json}{here}
+  is my \texttt{devcontainer.json} file setting
+\item
+  Open the folder inside the container (see the screenshot below)
+\end{itemize}
+
+You can read more about setting and using Docker with VScode on
+\href{https://code.visualstudio.com/docs/containers/overview}{VScode's
+documentation}.
+
+If you want to leverage the tutorial Docker settings, you can clone the
+repository and follow the next steps:
+
+\begin{itemize}
+\tightlist
+\item
+  Open the tutorial repository's folder on VScode
+\item
+  Open the \texttt{Command\ Palette} (⇧⌘P in Mac, Ctrl+Shift+P in
+  Windows) or use the \texttt{Open\ Remote\ Window} button (on the
+  bottom left side, see the screen recording above) and type
+  \texttt{Open\ Folder\ in\ Container}.
+\end{itemize}
+
+\textbf{Note:} It might take few minutes on the first time opening the
+container, as it pull the docker image from
+\href{https://hub.docker.com/repository/docker/rkrispin/tutorial}{Docker
+Hub}.
 
 \hypertarget{getting-started-with-javascript}{%
 \section{Getting started with
@@ -282,8 +351,14 @@ Firefox, etc.):
 While you can use your web-browser as consul for ad-hoc code test, the
 development of JS applications done inside a script using code editor
 such VScode, notepade, etc. It is common to have JS code embaded inside
-HTML script (or calling JS script from HTML script). Here is a basic
-example:
+HTML script (or calling JS script from HTML script).
+
+\hypertarget{workflow}{%
+\subsection{Workflow}\label{workflow}}
+
+In this tutorial, we will use the following three files to excute JS
+code on the browser: * \texttt{index.js} - the main JS file we *
+\texttt{index.html} * \texttt{style.css}
 
 \begin{Shaded}
 \begin{Highlighting}[]

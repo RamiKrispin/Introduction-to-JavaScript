@@ -2,6 +2,17 @@
 
 WIP...pre spelling check
 
+This tutorial covers the basic functionality operations of the JavaScript (JS) language, covering the following topics:
+
+* Setting VScode environment
+* Basic workflow
+* Variables
+* Functions
+* Data structure
+
+## Prerequisites 
+This tutorial provides an introduction to JS, and no previous knowledge of JS is required. We will use some basic HTML and CSS throughout the tutorial, don't worry if you are unfamiliar with those languages. 
+
 ## Settings
 
 Before getting started, let's set the development environment. There are many ways to develop and execute JavaScript. For this tutorial, I use VScode, which has great integrations with JavaScript, HTML, and CSS and seamless integration with Docker. In addition, it has great integration with Quarto, which was used to create this document. If you want to follow the same settings, check the instructions below.
@@ -10,7 +21,7 @@ Before getting started, let's set the development environment. There are many wa
 
 If you don't have VScode installed, you can download and install it directly from the [VScode website](https://code.visualstudio.com/). I also using the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension, which enables you to launch a local development server with a live reload feature for static & dynamic pages. 
 
-### Docker
+### Setting Docker Environment
 
 One of the main reasons I love using VScode is the seamless integration with Docker. It enables you to develop in your local folder while executing the code inside the image. Here is what you need to set your VScode to run inside a Docker image:
 
@@ -20,12 +31,17 @@ One of the main reasons I love using VScode is the seamless integration with Doc
 * Create the devcontainer.json file with your container settings (image name, environment variables, extension names, etc.), [here](https://github.com/RamiKrispin/Tutorials/blob/main/.devcontainer/devcontainer.json) is my `devcontainer.json` file setting
 * Open the folder inside the container (see the screenshot below)
 
+<img src="./images/vscode_container.gif" alt="Open Container" width="100%"> 
+
+You can read more about setting and using Docker with VScode on [VScode's documentation](https://code.visualstudio.com/docs/containers/overview).
 
 
-<video controls="controls" width="800" height="600" name="Video Name">
-  <source src="./images/vscode_open_container.mov">
-</video>
-<img src="./images/vscode open container.gif" alt="Open Container" width="100%">
+If you want to leverage the tutorial Docker settings, you can clone the repository and follow the next steps:
+
+* Open the tutorial repository's folder on VScode
+* Open the `Command Palette` (⇧⌘P in Mac, Ctrl+Shift+P in Windows) or use the `Open Remote Window` button (on the bottom left side, see the screen recording above) and type `Open Folder in Container`.
+
+**Note:** It might take few minutes on the first time opening the container, as it pull the docker image from [Docker Hub](https://hub.docker.com/repository/docker/rkrispin/tutorial).
 
 ## Getting started with JavaScript
 
