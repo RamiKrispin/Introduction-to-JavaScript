@@ -21,6 +21,12 @@ One of the main reasons I love using VScode is the seamless integration with Doc
 * Open the folder inside the container (see the screenshot below)
 
 
+
+<video controls="controls" width="800" height="600" name="Video Name">
+  <source src="./images/vscode_open_container.mov">
+</video>
+<img src="./images/vscode open container.gif" alt="Open Container" width="100%">
+
 ## Getting started with JavaScript
 
 JavaScript (also known as JS), is one of the most popular programming lannguage for web development. It typically used to create web pages applications, mobile apps, games, and great data visualizations tools. You can run JavaScript on your web-browser (e.g., Chrome, Safari, Firefox, etc.):
