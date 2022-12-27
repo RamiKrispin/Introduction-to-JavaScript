@@ -4,18 +4,21 @@ WIP...pre spelling check
 
 ## Settings
 
-Before getting started, let's set the development enviroment. There are many ways to develope and excute JavaScript, for this tutorial, I am using VScode. VScode has great integrations with JavaScript, HTML, and CSS, and seamless integration with Docker. In addition, it has great integration of Quarto, which used to create this document. If you want to follow the same settings, check the instractions below.
+Before getting started, let's set the development environment. There are many ways to develop and execute JavaScript. For this tutorial, I use VScode, which has great integrations with JavaScript, HTML, and CSS and seamless integration with Docker. In addition, it has great integration with Quarto, which was used to create this document. If you want to follow the same settings, check the instructions below.
 
 ### VScode Settings for JavaScripts
 
-If you don't have VScode install, you can download and install it directly from [VScode website](https://code.visualstudio.com/). I also using [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extention, which enables you to launch a local development server with live reload feature for static & dynamic pages. 
+If you don't have VScode installed, you can download and install it directly from the [VScode website](https://code.visualstudio.com/). I also using the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension, which enables you to launch a local development server with a live reload feature for static & dynamic pages. 
 
 ### Docker
 
-**TODO**
-Setting docker with VScode
+One of the main reasons I love using VScode is the seamless integration with Docker. It enables you to develop in your local folder while executing the code inside the image. Here is what you need to set your VScode to run inside a Docker image:
 
-The main reason I love using VScode is the seamless integression with Docker, enabling you develop in your local folder while running the code inside image. If you want to use the same environment here are two simple ways:
+* Docker Desktop (or equivalent) install on your machine (download and install it from [here](https://www.docker.com/products/docker-desktop/))
+* Docker [extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) for VScode
+* Set the supporting image, [here](https://github.com/RamiKrispin/Tutorials/tree/main/docker) are the Docker settings I am using for this tutorial
+* Create the devcontainer.json file with your container settings (image name, environment variables, extension names, etc.), [here](https://github.com/RamiKrispin/Tutorials/blob/main/.devcontainer/devcontainer.json) is my `devcontainer.json` file setting
+* Open the folder inside the container (see the screenshot below)
 
 
 ## Getting started with JavaScript
@@ -24,7 +27,14 @@ JavaScript (also known as JS), is one of the most popular programming lannguage 
 
 **Screen record here***
 
-While you can use your web-browser as consul for ad-hoc code test, the development of JS applications done inside a script using code editor such VScode, notepade, etc. It is common to have JS code embaded inside HTML script (or calling JS script from HTML script). Here is a basic example:
+While you can use your web-browser as consul for ad-hoc code test, the development of JS applications done inside a script using code editor such VScode, notepade, etc. It is common to have JS code embaded inside HTML script (or calling JS script from HTML script). 
+
+### Workflow
+
+In this tutorial, we will use the following three files to excute JS code on the browser:
+* `index.js` - the main JS file we
+* `index.html`
+* `style.css`
 
 ``` shell
 .
