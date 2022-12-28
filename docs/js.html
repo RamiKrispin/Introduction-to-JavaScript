@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -128,9 +191,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#vscode-settings-for-javascript" id="toc-vscode-settings-for-javascript" class="nav-link" data-scroll-target="#vscode-settings-for-javascript"><span class="toc-section-number">1.2.1</span>  VScode Settings for JavaScript</a></li>
   <li><a href="#setting-docker-environment" id="toc-setting-docker-environment" class="nav-link" data-scroll-target="#setting-docker-environment"><span class="toc-section-number">1.2.2</span>  Setting Docker Environment</a></li>
   </ul></li>
-  <li><a href="#getting-started-with-javascript" id="toc-getting-started-with-javascript" class="nav-link" data-scroll-target="#getting-started-with-javascript"><span class="toc-section-number">1.3</span>  Getting started with JavaScript</a>
+  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow"><span class="toc-section-number">1.3</span>  Workflow</a>
   <ul class="collapse">
-  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow"><span class="toc-section-number">1.3.1</span>  Workflow</a></li>
+  <li><a href="#file-structure" id="toc-file-structure" class="nav-link" data-scroll-target="#file-structure"><span class="toc-section-number">1.3.1</span>  File structure</a></li>
+  <li><a href="#live-server" id="toc-live-server" class="nav-link" data-scroll-target="#live-server"><span class="toc-section-number">1.3.2</span>  Live Server</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -204,18 +268,65 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Note:</strong> It might take few minutes on the first time opening the container, as it pull the docker image from <a href="https://hub.docker.com/repository/docker/rkrispin/tutorial">Docker Hub</a>.</p>
 </section>
 </section>
-<section id="getting-started-with-javascript" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="getting-started-with-javascript"><span class="header-section-number">1.3</span> Getting started with JavaScript</h2>
-<p>JavaScript (also known as JS), is one of the most popular programming lannguage for web development. It typically used to create web pages applications, mobile apps, games, and great data visualizations tools. You can run JavaScript on your web-browser (e.g., Chrome, Safari, Firefox, etc.):</p>
+<section id="workflow" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="workflow"><span class="header-section-number">1.3</span> Workflow</h2>
+<p>JavaScript (also known as JS), is one of the most popular programming languages for web development. It is typically used to create web page applications, mobile apps, games, and great data visualization tools (D3, Observable Plot, Leaflet, Charts, etc.). You can run JavaScript on your web browser (e.g., Chrome, Safari, Firefox, etc.):</p>
 <p><strong>Screen record here</strong>*</p>
-<p>While you can use your web-browser as consul for ad-hoc code test, the development of JS applications done inside a script using code editor such VScode, notepade, etc. It is common to have JS code embaded inside HTML script (or calling JS script from HTML script).</p>
-<section id="workflow" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="workflow"><span class="header-section-number">1.3.1</span> Workflow</h3>
-<p>In this tutorial, we will use the following three files to excute JS code on the browser: * <code>index.js</code> - the main JS file we * <code>index.html</code> * <code>style.css</code></p>
+<p>While you can use your web browser as a consul for ad-hoc code tests, the development of JS applications is done inside a script using a code editor such VScode, notepad, etc. It is common to have JS code embedded inside HTML script (or call JS script from HTML script).</p>
+<section id="file-structure" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="file-structure"><span class="header-section-number">1.3.1</span> File structure</h3>
+<p>In this tutorial, we will adopt the basic framework for running JS code on the browser by setting a web page with an HTML file (<code>index.html</code>) and leveraging it to call a JS file (<code>index.js</code>) with our JS code. In addition, we will use a CSS file (<code>style.css</code>) to set the web page style. I will set those files under the <a href="https://github.com/RamiKrispin/Tutorials/tree/main/JavaScript">JavaScript folder</a>:</p>
 <pre class="shell"><code>.
 ├── index.html
 ├── index.js
 └── style.ccs</code></pre>
+<p><strong>Note:</strong> For convenience, I placed the three files in the same folder. However, if you wish to arrange it differently, you can easily reference the <code>index.js</code> and <code>style.css</code> file paths from the <code>index.html</code> file.</p>
+<p>Don’t worry if you are not familiar with HTML or CSS. We will use the basic templates to set those files. Let’s start by creating three empty files using the file names above. To set the HTML file, we will use the VScode HTML code snippet template by typing the <code>!</code> symbol and press enter:</p>
+<p><img src="./images/vscode_html_template.gif" alt="Setting HTML template" width="100%"></p>
+<p>In a nutshell, the HTML file we created contains the following two main elements:</p>
+<ul>
+<li><code>head</code> - Use to define the page metadata and settings</li>
+<li><code>body</code> - Use to set the page content</li>
+</ul>
+<p>An excellent resource to read about the <a href="https://www.w3schools.com/tags/tag_head.asp">head</a> and <a href="https://www.w3schools.com/tags/tag_body.asp">body</a> tags, or any other tags, is the <a href="https://www.w3schools.com/html/default.asp">w3schools website</a>.</p>
+<p><strong>index.html</strong>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html</span> <span class="er">lang</span><span class="ot">=</span><span class="st">"en"</span><span class="kw">&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">"UTF-8"</span><span class="kw">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">http-equiv</span><span class="ot">=</span><span class="st">"X-UA-Compatible"</span> <span class="er">content</span><span class="ot">=</span><span class="st">"IE=edge"</span><span class="kw">&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">"viewport"</span> <span class="er">content</span><span class="ot">=</span><span class="st">"width=device-width, initial-scale=1.0"</span><span class="kw">&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>Document<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here are a few things we are going to modify and add to this file:</p>
+<ul>
+<li>The <code>&lt;title&gt;</code> tag under the <code>&lt;head&gt;</code> defines the web browser’s tab title. Let’s modify it from <em>Document</em> to <em>Introduction to JS</em></li>
+<li>Set the page CSS by linking the <code>style.css</code> file to the page <code>&lt;head&gt;</code> element using the <a href="https://www.w3schools.com/tags/tag_link.asp">link</a> tag</li>
+</ul>
+<p><strong>index.html</strong>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html</span> <span class="er">lang</span><span class="ot">=</span><span class="st">"en"</span><span class="kw">&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">"UTF-8"</span><span class="kw">&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">http-equiv</span><span class="ot">=</span><span class="st">"X-UA-Compatible"</span> <span class="er">content</span><span class="ot">=</span><span class="st">"IE=edge"</span><span class="kw">&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">name</span><span class="ot">=</span><span class="st">"viewport"</span> <span class="er">content</span><span class="ot">=</span><span class="st">"width=device-width, initial-scale=1.0"</span><span class="kw">&gt;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>Introduction to JS<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"stylesheet"</span> <span class="er">href</span> <span class="ot">=</span> <span class="st">"style.css"</span><span class="kw">&gt;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here is the basic CSS settings we will use on the <code>style.css</code> file:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="live-server" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="live-server"><span class="header-section-number">1.3.2</span> Live Server</h3>
+<p>Before we diving into JS code, let’s see how the VScode’s <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">live server</a> extension is working and how to leverage it in our workflow. This extension will enable us to instantaneously review the changes we apply to the index.html file on the web browser as we update and save the code. If you have wide screen, I recommand to open side-by-side VScode and your default browser and see, while coding, the changes in the browser. To launch the live server on VScode, go to the EXPLORER tab left side and right-click on the index.html file. That should pop up a window with options, select <em>Open with Live Server</em> option:</p>
+<p><img src="./images/vscode_live_server.gif" alt="Live Server" width="100%"></p>
+<p>That’s it! we are ready to write our first JS code!</p>
 
 
 </section>
