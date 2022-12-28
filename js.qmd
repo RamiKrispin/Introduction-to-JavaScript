@@ -23,7 +23,7 @@ In addition, we will use some basic HTML and CSS throughout the tutorial, don’
 
 Before getting started, let's set the development environment. There are many ways to develop and execute JavaScript. For this tutorial, I use VScode, which has great integrations with JavaScript, HTML, and CSS and seamless integration with Docker. In addition, it has great integration with Quarto, which was used to create this document. If you want to follow the same settings, check the instructions below.
 
-### VScode Settings for JavaScripts
+### VScode Settings for JavaScript
 
 If you don't have VScode installed, you can download and install it directly from the [VScode website](https://code.visualstudio.com/). I also use the following extensions:
 
