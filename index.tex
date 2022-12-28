@@ -213,7 +213,7 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, enhanced, interior hidden, frame hidden, breakable, boxrule=0pt, sharp corners]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, enhanced, sharp corners, frame hidden, interior hidden, breakable, boxrule=0pt]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -356,29 +356,33 @@ container, as it pull the docker image from
 \href{https://hub.docker.com/repository/docker/rkrispin/tutorial}{Docker
 Hub}.
 
-\hypertarget{getting-started-with-javascript}{%
-\section{Getting started with
-JavaScript}\label{getting-started-with-javascript}}
+\hypertarget{workflow}{%
+\section{Workflow}\label{workflow}}
 
 JavaScript (also known as JS), is one of the most popular programming
-lannguage for web development. It typically used to create web pages
-applications, mobile apps, games, and great data visualizations tools.
-You can run JavaScript on your web-browser (e.g., Chrome, Safari,
-Firefox, etc.):
+languages for web development. It is typically used to create web page
+applications, mobile apps, games, and great data visualization tools
+(D3, Observable Plot, Leaflet, Charts, etc.). You can run JavaScript on
+your web browser (e.g., Chrome, Safari, Firefox, etc.):
 
 \textbf{Screen record here}*
 
-While you can use your web-browser as consul for ad-hoc code test, the
-development of JS applications done inside a script using code editor
-such VScode, notepade, etc. It is common to have JS code embaded inside
-HTML script (or calling JS script from HTML script).
+While you can use your web browser as a consul for ad-hoc code tests,
+the development of JS applications is done inside a script using a code
+editor such VScode, notepad, etc. It is common to have JS code embedded
+inside HTML script (or call JS script from HTML script).
 
-\hypertarget{workflow}{%
-\subsection{Workflow}\label{workflow}}
+\hypertarget{file-structure}{%
+\subsection{File structure}\label{file-structure}}
 
-In this tutorial, we will use the following three files to excute JS
-code on the browser: * \texttt{index.js} - the main JS file we *
-\texttt{index.html} * \texttt{style.css}
+In this tutorial, we will adopt the basic framework for running JS code
+on the browser by setting a web page with an HTML file
+(\texttt{index.html}) and leveraging it to call a JS file
+(\texttt{index.js}) with our JS code. In addition, we will use a CSS
+file (\texttt{style.css}) to set the web page style. I will set those
+files under the
+\href{https://github.com/RamiKrispin/Tutorials/tree/main/JavaScript}{JavaScript
+folder}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -388,6 +392,111 @@ code on the browser: * \texttt{index.js} - the main JS file we *
 \NormalTok{└── style.ccs}
 \end{Highlighting}
 \end{Shaded}
+
+\textbf{Note:} For convenience, I placed the three files in the same
+folder. However, if you wish to arrange it differently, you can easily
+reference the \texttt{index.js} and \texttt{style.css} file paths from
+the \texttt{index.html} file.
+
+Don't worry if you are not familiar with HTML or CSS. We will use the
+basic templates to set those files. Let's start by creating three empty
+files using the file names above. To set the HTML file, we will use the
+VScode HTML code snippet template by typing the \texttt{!} symbol and
+press enter:
+
+In a nutshell, the HTML file we created contains the following two main
+elements:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{head} - Use to define the page metadata and settings
+\item
+  \texttt{body} - Use to set the page content
+\end{itemize}
+
+An excellent resource to read about the
+\href{https://www.w3schools.com/tags/tag_head.asp}{head} and
+\href{https://www.w3schools.com/tags/tag_body.asp}{body} tags, or any
+other tags, is the
+\href{https://www.w3schools.com/html/default.asp}{w3schools website}.
+
+\textbf{index.html}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{\textless{}!DOCTYPE }\NormalTok{html}\DataTypeTok{\textgreater{}}
+\KeywordTok{\textless{}html} \ErrorTok{lang}\OtherTok{=}\StringTok{"en"}\KeywordTok{\textgreater{}}
+\KeywordTok{\textless{}head\textgreater{}}
+    \KeywordTok{\textless{}meta} \ErrorTok{charset}\OtherTok{=}\StringTok{"UTF{-}8"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}meta} \ErrorTok{http{-}equiv}\OtherTok{=}\StringTok{"X{-}UA{-}Compatible"} \ErrorTok{content}\OtherTok{=}\StringTok{"IE=edge"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}meta} \ErrorTok{name}\OtherTok{=}\StringTok{"viewport"} \ErrorTok{content}\OtherTok{=}\StringTok{"width=device{-}width, initial{-}scale=1.0"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}title\textgreater{}}\NormalTok{Document}\KeywordTok{\textless{}/title\textgreater{}}
+\KeywordTok{\textless{}/head\textgreater{}}
+\KeywordTok{\textless{}body\textgreater{}}
+\KeywordTok{\textless{}/body\textgreater{}}
+\KeywordTok{\textless{}/html\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+Here are a few things we are going to modify and add to this file:
+
+\begin{itemize}
+\tightlist
+\item
+  The \texttt{\textless{}title\textgreater{}} tag under the
+  \texttt{\textless{}head\textgreater{}} defines the web browser's tab
+  title. Let's modify it from \emph{Document} to \emph{Introduction to
+  JS}
+\item
+  Set the page CSS by linking the \texttt{style.css} file to the page
+  \texttt{\textless{}head\textgreater{}} element using the
+  \href{https://www.w3schools.com/tags/tag_link.asp}{link} tag
+\end{itemize}
+
+\textbf{index.html}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{\textless{}!DOCTYPE }\NormalTok{html}\DataTypeTok{\textgreater{}}
+\KeywordTok{\textless{}html} \ErrorTok{lang}\OtherTok{=}\StringTok{"en"}\KeywordTok{\textgreater{}}
+\KeywordTok{\textless{}head\textgreater{}}
+    \KeywordTok{\textless{}meta} \ErrorTok{charset}\OtherTok{=}\StringTok{"UTF{-}8"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}meta} \ErrorTok{http{-}equiv}\OtherTok{=}\StringTok{"X{-}UA{-}Compatible"} \ErrorTok{content}\OtherTok{=}\StringTok{"IE=edge"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}meta} \ErrorTok{name}\OtherTok{=}\StringTok{"viewport"} \ErrorTok{content}\OtherTok{=}\StringTok{"width=device{-}width, initial{-}scale=1.0"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}title\textgreater{}}\NormalTok{Introduction to JS}\KeywordTok{\textless{}/title\textgreater{}}
+    \KeywordTok{\textless{}link} \ErrorTok{rel}\OtherTok{=}\StringTok{"stylesheet"} \ErrorTok{href} \OtherTok{=} \StringTok{"style.css"}\KeywordTok{\textgreater{}}
+\KeywordTok{\textless{}/head\textgreater{}}
+\KeywordTok{\textless{}body\textgreater{}}
+\KeywordTok{\textless{}/body\textgreater{}}
+\KeywordTok{\textless{}/html\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+Here is the basic CSS settings we will use on the \texttt{style.css}
+file:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{live-server}{%
+\subsection{Live Server}\label{live-server}}
+
+Before we diving into JS code, let's see how the VScode's
+\href{https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer}{live
+server} extension is working and how to leverage it in our workflow.
+This extension will enable us to instantaneously review the changes we
+apply to the index.html file on the web browser as we update and save
+the code. If you have wide screen, I recommand to open side-by-side
+VScode and your default browser and see, while coding, the changes in
+the browser. To launch the live server on VScode, go to the EXPLORER tab
+left side and right-click on the index.html file. That should pop up a
+window with options, select \emph{Open with Live Server} option:
+
+That's it! we are ready to write our first JS code!
 
 \bookmarksetup{startatroot}
 
