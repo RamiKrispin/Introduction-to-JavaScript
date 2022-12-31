@@ -198,7 +198,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={Tutorials},
+  pdftitle={Introduction to JavaScript},
   pdfauthor={Rami Krispin},
   colorlinks=true,
   linkcolor={blue},
@@ -207,13 +207,13 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
-\title{Tutorials}
+\title{Introduction to JavaScript}
 \author{Rami Krispin}
-\date{11/27/22}
+\date{1/1/23}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, sharp corners, enhanced, frame hidden, interior hidden, breakable]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, borderline west={3pt}{0pt}{shadecolor}, frame hidden, sharp corners, enhanced, boxrule=0pt, interior hidden]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -228,11 +228,6 @@
 \addcontentsline{toc}{chapter}{Preface}
 
 \markboth{Preface}{Preface}
-
-\bookmarksetup{startatroot}
-
-\hypertarget{introduction-to-javascript}{%
-\chapter{Introduction to JavaScript}\label{introduction-to-javascript}}
 
 WIP\ldots pre spelling check
 
@@ -254,7 +249,10 @@ JavaScript (JS) language, covering the following topics:
 \end{itemize}
 
 \hypertarget{prerequisites}{%
-\section{Prerequisites}\label{prerequisites}}
+\section*{Prerequisites}\label{prerequisites}}
+\addcontentsline{toc}{section}{Prerequisites}
+
+\markright{Prerequisites}
 
 Here are the assumptions I made when I created this tutorial:
 
@@ -271,8 +269,12 @@ Here are the assumptions I made when I created this tutorial:
 In addition, we will use some basic HTML and CSS throughout the
 tutorial, don't worry if you are unfamiliar with those languages.
 
+\bookmarksetup{startatroot}
+
 \hypertarget{settings}{%
-\section{Settings}\label{settings}}
+\chapter{Settings}\label{settings}}
+
+WIP\ldots pre spelling check
 
 Before getting started, let's set the development environment. There are
 many ways to develop and execute JavaScript. For this tutorial, I use
@@ -617,11 +619,6 @@ and call it with the \texttt{src} argument of the \texttt{script} tag:
 In both cases, here is the expected output:
 
 That's it! We are ready to write our first JS code!
-
-\bookmarksetup{startatroot}
-
-\hypertarget{summary}{%
-\chapter{Summary}\label{summary}}
 
 \bookmarksetup{startatroot}
 
