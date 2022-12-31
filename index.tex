@@ -213,7 +213,7 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, enhanced, sharp corners, frame hidden, interior hidden, breakable, boxrule=0pt]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, sharp corners, enhanced, frame hidden, interior hidden, breakable]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -404,13 +404,48 @@ files using the file names above. To set the HTML file, we will use the
 VScode HTML code snippet template by typing the \texttt{!} symbol and
 press enter:
 
-In a nutshell, the HTML file we created contains the following two main
-elements:
+In a nutshell, the HTML language is based on code chunks nested by tags.
+The tags define the code's functionality. Here is the most common tag
+structure:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}tag\_name\textgreater{}}\NormalTok{ arguments and expressions }\KeywordTok{\textless{}/tag\_name\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+In this HTML structure, the element is nested by the tag name. In both
+cases, the tag is enclosed within \texttt{\textless{}\ \textgreater{}}
+brackets, where the closing tag is marked with \texttt{/} symbol before
+the tag. For example, we will use the title tag to define the web page
+title:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}title\textgreater{}}\NormalTok{My Title}\KeywordTok{\textless{}/title\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+The second type of tag typically defines an attribute with a single tag
+enclosed with \textless\textgreater{} brackets. For example, the
+\href{https://www.w3schools.com/tags/tag_meta.asp}{meta} tag defines the
+HTML page metadata:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}meta} \ErrorTok{charset}\OtherTok{=}\StringTok{"UTF{-}8"}\KeywordTok{\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+In this case, the \texttt{charset} argument defines the character
+encoding method as \texttt{UTF-8}.
+
+The HTML file we created contains the following two main elements:
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{head} - Use to define the page metadata and settings
+  \texttt{head} - Use to define the page metadata and attributes
 \item
   \texttt{body} - Use to set the page content
 \end{itemize}
@@ -473,19 +508,32 @@ Here are a few things we are going to modify and add to this file:
 \end{Highlighting}
 \end{Shaded}
 
-Here is the basic CSS settings we will use on the \texttt{style.css}
-file:
+Here is a simple CSS setting we will use to define the HTML page font
+and headers size:
+
+\textbf{style.css}
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\ImportTok{@import} \FunctionTok{url(}\StringTok{https://fonts.googleapis.com/css?family=Lato:400,700,400italic}\FunctionTok{)}\OperatorTok{;}
+\ImportTok{@import} \FunctionTok{url(}\StringTok{https://fonts.googleapis.com/css?family=Roboto+Condensed}\FunctionTok{)}\OperatorTok{;}
+\ImportTok{@import} \FunctionTok{url(}\StringTok{https://fonts.googleapis.com/css?family=Roboto+Mono}\FunctionTok{)}\OperatorTok{;}
 
+\NormalTok{body \{ }
+  \KeywordTok{font{-}family}\NormalTok{: }\StringTok{\textquotesingle{}Lato\textquotesingle{}}\OperatorTok{,}\NormalTok{ Arial}\OperatorTok{,} \DecValTok{sans{-}serif}\OperatorTok{;}
+  \KeywordTok{font{-}size}\NormalTok{: }\DecValTok{26}\DataTypeTok{px}\OperatorTok{;}
+\NormalTok{\}}
+\NormalTok{h1}\OperatorTok{,}\NormalTok{ h2}\OperatorTok{,}\NormalTok{ h3}\OperatorTok{,}\NormalTok{ h4 \{}
+  \KeywordTok{font{-}family}\NormalTok{: }\StringTok{\textquotesingle{}Roboto Condensed\textquotesingle{}}\OperatorTok{,} \StringTok{\textquotesingle{}Arial Narrow OS\textquotesingle{}}\OperatorTok{,}\NormalTok{ Arial}\OperatorTok{,} \DecValTok{sans{-}serif}\OperatorTok{;}
+  \KeywordTok{font{-}weight}\NormalTok{: }\DecValTok{normal}\OperatorTok{;}
+\NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
 
 \hypertarget{live-server}{%
 \subsection{Live Server}\label{live-server}}
 
-Before we diving into JS code, let's see how the VScode's
+Last but not least, let's see how the VScode's
 \href{https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer}{live
 server} extension is working and how to leverage it in our workflow.
 This extension will enable us to instantaneously review the changes we
@@ -496,7 +544,79 @@ the browser. To launch the live server on VScode, go to the EXPLORER tab
 left side and right-click on the index.html file. That should pop up a
 window with options, select \emph{Open with Live Server} option:
 
-That's it! we are ready to write our first JS code!
+\hypertarget{executing-javascript-code}{%
+\section{Executing JavaScript code}\label{executing-javascript-code}}
+
+Throughout this tutorial, we will use the \texttt{index.html} file to
+run JS code on the HTML page using the
+\href{https://www.w3schools.com/tags/tag_script.asp}{script} tag. As the
+name implies, the \texttt{script} tab enables us to embed JS code within
+an HTML file or call and execute an external JS script. For example,
+let's use the JS \texttt{window.alert} function to pop an alert window
+and print \texttt{Hello\ World!}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{window}\OperatorTok{.}\FunctionTok{alert}\NormalTok{(}\StringTok{"Hello World!"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Here is how you would embed your JS code within the HTML file using the
+\texttt{script} tag:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{\textless{}!DOCTYPE }\NormalTok{html}\DataTypeTok{\textgreater{}}
+\KeywordTok{\textless{}html} \ErrorTok{lang}\OtherTok{=}\StringTok{"en"}\KeywordTok{\textgreater{}}
+\KeywordTok{\textless{}head\textgreater{}}
+    \KeywordTok{\textless{}meta} \ErrorTok{charset}\OtherTok{=}\StringTok{"UTF{-}8"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}meta} \ErrorTok{http{-}equiv}\OtherTok{=}\StringTok{"X{-}UA{-}Compatible"} \ErrorTok{content}\OtherTok{=}\StringTok{"IE=edge"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}meta} \ErrorTok{name}\OtherTok{=}\StringTok{"viewport"} \ErrorTok{content}\OtherTok{=}\StringTok{"width=device{-}width, initial{-}scale=1.0"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}title\textgreater{}}\NormalTok{Introduction to JS}\KeywordTok{\textless{}/title\textgreater{}}
+    \KeywordTok{\textless{}link} \ErrorTok{rel}\OtherTok{=}\StringTok{"stylesheet"} \ErrorTok{href} \OtherTok{=} \StringTok{"style.css"}\KeywordTok{\textgreater{}}
+\KeywordTok{\textless{}/head\textgreater{}}
+\KeywordTok{\textless{}body\textgreater{}}
+    \KeywordTok{\textless{}script\textgreater{}}\BuiltInTok{window}\OperatorTok{.}\FunctionTok{alert}\NormalTok{(}\StringTok{"Hello World!"}\NormalTok{)}\KeywordTok{\textless{}/script\textgreater{}}
+\KeywordTok{\textless{}/body\textgreater{}}
+\KeywordTok{\textless{}/html\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+Alternatively, you can use the \texttt{script} tag to call and execute
+the JS script file. Let's copy our JS code to the \texttt{index.js} file
+and call it with the \texttt{src} argument of the \texttt{script} tag:
+
+\textbf{index.js}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{window}\OperatorTok{.}\FunctionTok{alert}\NormalTok{(}\StringTok{"Hello World!"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{index.html}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{\textless{}!DOCTYPE }\NormalTok{html}\DataTypeTok{\textgreater{}}
+\KeywordTok{\textless{}html} \ErrorTok{lang}\OtherTok{=}\StringTok{"en"}\KeywordTok{\textgreater{}}
+\KeywordTok{\textless{}head\textgreater{}}
+    \KeywordTok{\textless{}meta} \ErrorTok{charset}\OtherTok{=}\StringTok{"UTF{-}8"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}meta} \ErrorTok{http{-}equiv}\OtherTok{=}\StringTok{"X{-}UA{-}Compatible"} \ErrorTok{content}\OtherTok{=}\StringTok{"IE=edge"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}meta} \ErrorTok{name}\OtherTok{=}\StringTok{"viewport"} \ErrorTok{content}\OtherTok{=}\StringTok{"width=device{-}width, initial{-}scale=1.0"}\KeywordTok{\textgreater{}}
+    \KeywordTok{\textless{}title\textgreater{}}\NormalTok{Introduction to JS}\KeywordTok{\textless{}/title\textgreater{}}
+    \KeywordTok{\textless{}link} \ErrorTok{rel}\OtherTok{=}\StringTok{"stylesheet"} \ErrorTok{href} \OtherTok{=} \StringTok{"style.css"}\KeywordTok{\textgreater{}}
+\KeywordTok{\textless{}/head\textgreater{}}
+\KeywordTok{\textless{}body\textgreater{}}
+    \KeywordTok{\textless{}script} \ErrorTok{src} \OtherTok{=} \StringTok{"index.js"}\KeywordTok{\textgreater{}\textless{}/script\textgreater{}}
+\KeywordTok{\textless{}/body\textgreater{}}
+\KeywordTok{\textless{}/html\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+In both cases, here is the expected output:
+
+That's it! We are ready to write our first JS code!
 
 \bookmarksetup{startatroot}
 
