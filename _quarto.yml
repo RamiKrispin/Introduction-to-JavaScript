@@ -3,13 +3,12 @@ project:
   output-dir: docs
 
 book:
-  title: "Tutorials"
+  title: "Introduction to JavaScript"
   author: "Rami Krispin"
-  date: "11/27/2022"
+  date: "01/01/2023"
   chapters:
     - index.qmd
-    - js.qmd
-    - summary.qmd
+    - settings.qmd
     - references.qmd
 
 bibliography: references.bib
